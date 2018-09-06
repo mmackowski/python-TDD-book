@@ -9,13 +9,17 @@ import unittest
 class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
-        # Ran up against an issue trying to run Selenium/Geckodriver on windows; 
-        # added Firefox Desired Capabilities and it worked fine; default setting of marionette is true, but I forced it 
-        cap = DesiredCapabilities().FIREFOX
-        cap["marionette"] = True
-        opts = Options()
-        opts.log.level = "trace"
-        self.browser = webdriver.Firefox(executable_path="./geckodriver.exe", capabilities=cap, options=opts)
+        # Dr Babb...I originally, ah, missed the section in the book that said to stick with Django 1.11, so I downloaded 2.1.1
+        # Ran up against an issue trying to get it to run with Selenium/Geckodriver on windows; 
+        # added Firefox Desired Capabilities and it worked fine; 
+        # decided to downgrade back to 1.11 in case there were issues later in the book; 
+        # since you would see this in the repo history anyhow I left the code here, maybe use it later
+        # cap = DesiredCapabilities().FIREFOX
+        # cap["marionette"] = True
+        # opts = Options()
+        # opts.log.level = "trace"
+        # self.browser = webdriver.Firefox(executable_path="./geckodriver.exe", capabilities=cap, options=opts)
+        self.browser = webdriver.Firefox()
 
     def tearDown(self):
         # automatic quit after tests are complete

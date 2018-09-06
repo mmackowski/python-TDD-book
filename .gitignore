@@ -1,5 +1,6 @@
 db.sqlite3
 geckodriver.exe
+geckodriver.log
 virutalenv
 virtualenv
 __pycache__
